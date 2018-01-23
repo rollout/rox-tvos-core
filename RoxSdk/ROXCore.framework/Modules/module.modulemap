@@ -1,0 +1,7 @@
+framework module ROXCore {
+    umbrella header "ROXCore1.h"
+    
+    export *
+    module * { export * }
+}
+
