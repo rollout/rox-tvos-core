@@ -13,7 +13,7 @@
  */
 
 @interface ROXConfigurationString : ROXRemoteVariable
-
+NS_ASSUME_NONNULL_BEGIN
 /**
  :nodoc:
  */
@@ -35,6 +35,6 @@
  */
 
 @property (nonatomic, readonly, nonnull) NSString* value;
-
+NS_ASSUME_NONNULL_END
 
 @end
