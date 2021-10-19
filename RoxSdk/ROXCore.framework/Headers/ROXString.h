@@ -1,5 +1,5 @@
 //
-//  ROXVariant.h
+//  ROXString.h
 //  ROX
 //
 //  Created by Elad Cohen on 6/28/17.
@@ -8,24 +8,26 @@
 
 #import <Foundation/Foundation.h>
 #import "ROXFreeze.h"
+#import "ROXDynamicPropertiesRule.h"
 /**
  :nodoc:
  */
-@interface ROXVariant : NSObject
+@interface ROXString : NSObject
 {
     NSString* _value;
     BOOL isFreezed;
 }
 NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) NSString* name;
-@property (readonly, nonatomic) NSArray<NSString*>* options;
+@property (readonly, nonatomic) NSArray<NSString*>* variations;
 
 - (instancetype)initWithDefault:(NSString*)defaultValue;
-- (instancetype)initWithDefault:(NSString*)defaultValue options:(NSArray<NSString*>*)options;
-- (instancetype)initWithDefault:(NSString*)defaultValue options:(NSArray<NSString*>*)options freeze:(ROXFreeze)freeze;
+- (instancetype)initWithDefault:(NSString*)defaultValue variations:(NSArray<NSString*>*)variations;
+- (instancetype)initWithDefault:(NSString*)defaultValue variations:(NSArray<NSString*>*)variations freeze:(ROXFreeze)freeze;
 
 
 - (NSString*)value;
+- (NSString*)value:(ROXDynamicPropertyContext* _Nullable)context;
 - (NSString*)defaultValue;
 - (void)forceValue:(NSString*)value;
 - (void)unfreeze;
